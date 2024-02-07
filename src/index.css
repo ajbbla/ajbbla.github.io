@@ -10,3 +10,7 @@
 .type::after {
     content: '█';
 }
+
+.hoverable:hover::after {
+    content: '█';
+}

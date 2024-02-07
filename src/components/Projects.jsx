@@ -16,7 +16,7 @@ const Projects = () => {
     return (
         <div className='dark:bg-slate-800'>
             <div id='projects' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-mono'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
+                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700 text-shadow-[0.75px_0.75px_1.25px] shadow-black dark:shadow-white'>
                     Projects
                 </h1>
                 <div className='max-w-[1000px] w-full px-4'>

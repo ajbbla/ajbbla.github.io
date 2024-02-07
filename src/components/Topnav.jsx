@@ -24,7 +24,7 @@ const Topnav = () => {
                             <li>
                                 <a
                                     href={link}
-                                    className='text-xl font-mono font-bold m-4 px-[1px] hover:border-r-[13px] border-gray-800 dark:border-gray-300'
+                                    className='hoverable text-xl font-mono font-bold m-4 px-[1px] text-shadow-[0.5px_0.5px_1px] shadow-black dark:shadow-white'
                                 >
                                     {title}
                                 </a>
@@ -37,7 +37,7 @@ const Topnav = () => {
                             href={Resume}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='m-4 py-2 px-4 text-sm text-white font-mono font-bold text-center rounded-md bg-gray-800 hover:bg-white hover:text-gray-800 border-2 border-gray-800 dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'
+                            className='m-4 py-2 px-4 text-sm text-white font-mono font-bold text-center rounded-md bg-gray-800 hover:bg-white hover:text-gray-800 border-2 border-gray-800 drop-shadow-lg hover:drop-shadow-none dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'
                         >
                             Resume
                         </a>
@@ -61,9 +61,9 @@ const Topnav = () => {
                                     <a
                                         href={link}
                                         onClick={handleNav}
-                                        className='m-8 px-[1px] hover:border-r-[23px] border-gray-800 dark:border-gray-300'
+                                        className='m-8 px-[1px]'
                                     >
-                                        <span className='text-4xl text-gray-800 font-mono font-bold dark:text-gray-300'>
+                                        <span className='hoverable text-4xl text-gray-800 font-mono font-bold dark:text-gray-300 text-shadow-[0.75px_0.75px_1.25px] shadow-black dark:shadow-white'>
                                             {title}
                                         </span>
                                     </a>
@@ -73,7 +73,7 @@ const Topnav = () => {
                                     href={Resume}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='py-2 px-4 text-2xl text-white font-mono font-bold text-center rounded-md bg-gray-800 border-2 border-gray-800 hover:bg-white hover:text-gray-800 dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'
+                                    className='py-2 px-4 text-2xl text-white font-mono font-bold text-center rounded-md bg-gray-800 border-2 border-gray-800 drop-shadow-lg shadow hover:drop-shadow-none hover:bg-white hover:text-gray-800 dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'
                                 >
                                     Resume
                                 </a>
