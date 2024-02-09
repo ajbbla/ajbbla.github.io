@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className='dark:bg-slate-800'>
             <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-mono'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700 text-shadow-[0.75px_0.75px_1.25px] shadow-black dark:shadow-white'>
+                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
                     About
                 </h1>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
@@ -15,7 +15,7 @@ const About = () => {
                             className='lg:mt-8 mx-auto rounded-full h-80 w-80 shadow-lg shadow-gray-400 dark:shadow-slate-900'
                         />
                         <div>
-                            <div className='mb-8 text-2xl font-bold text-gray-800 dark:text-gray-300 text-shadow-[0.5px_0.5px_1px] shadow-black dark:shadow-white'>
+                            <div className='mb-8 text-2xl font-bold text-gray-800 dark:text-gray-300'>
                                 <p>
                                     Hi! I'm Allen, an ESL teacher turned software engineer.
                                 </p>

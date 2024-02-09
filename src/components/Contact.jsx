@@ -4,7 +4,7 @@ const Contact = () => {
     return (
         <div className='dark:bg-slate-800'>
             <div id='contact' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-mono'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700 text-shadow-[0.75px_0.75px_1.25px] shadow-black dark:shadow-white'>
+                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
                     Contact
                 </h1>
                 <div className='max-w-[1000px] w-full px-4'>
@@ -27,7 +27,7 @@ const Contact = () => {
                 >
                     <div className='grid md:grid-cols-2 gap-4 w-full py-2 text-gray-800 dark:text-gray-300'>
                         <div className='flex flex-col'>
-                            <label className='uppercase text-sm font-bold py-2 text-shadow-[0.25px_0.25px_0.5px] shadow-black dark:shadow-white'>
+                            <label className='uppercase text-sm font-bold py-2'>
                                 Name
                             </label>
                             <input
@@ -37,7 +37,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className='flex flex-col'>
-                            <label className='uppercase text-sm font-bold py-2 text-shadow-[0.25px_0.25px_0.5px] shadow-black dark:shadow-white'>
+                            <label className='uppercase text-sm font-bold py-2'>
                                 Phone
                             </label>
                             <input
@@ -48,7 +48,7 @@ const Contact = () => {
                         </div>
                     </div>
                     <div className='flex flex-col py-2 text-gray-800 dark:text-gray-300'>
-                        <label className='uppercase text-sm font-bold py-2 text-shadow-[0.25px_0.25px_0.5px] shadow-black dark:shadow-white'>
+                        <label className='uppercase text-sm font-bold py-2'>
                             Email
                         </label>
                         <input
@@ -58,7 +58,7 @@ const Contact = () => {
                         />
                     </div>
                     <div className='flex flex-col py-2 text-gray-800 dark:text-gray-300'>
-                        <label className='uppercase text-sm font-bold py-2 text-shadow-[0.25px_0.25px_0.5px] shadow-black dark:shadow-white'>
+                        <label className='uppercase text-sm font-bold py-2'>
                             Subject
                         </label>
                         <input
@@ -68,7 +68,7 @@ const Contact = () => {
                         />
                     </div>
                     <div className='flex flex-col py-2 text-gray-800 dark:text-gray-300'>
-                        <label className='uppercase text-sm font-bold py-2 text-shadow-[0.25px_0.25px_0.5px] shadow-black dark:shadow-white'>
+                        <label className='uppercase text-sm font-bold py-2'>
                             Message
                         </label>
                         <textarea
@@ -77,7 +77,7 @@ const Contact = () => {
                             name='message'
                         />
                     </div>
-                    <button className='flex mr-0 ml-auto bg-gray-800 text-sm text-white font-bold mt-4 py-2 px-4 rounded-lg border-2 border-gray-800 drop-shadow-lg hover:drop-shadow-none hover:bg-white hover:text-gray-800 dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'>
+                    <button className='flex mr-0 ml-auto bg-gray-800 text-sm text-white font-bold mt-4 py-2 px-4 rounded-lg border-2 border-gray-800 hover:bg-white hover:text-gray-800 dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'>
                         Send
                     </button>
                 </form>
