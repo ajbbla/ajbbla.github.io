@@ -1,9 +1,9 @@
 import React from 'react'
 import ProjectItem from './ProjectItem'
-import propertyImg from '../assets/property.jpg'
-import cryptoImg from '../assets/crypto.jpg'
-import netflixImg from '../assets/netflix.jpg'
-import twitchImg from '../assets/twitch.jpg'
+import propertyImg from '../assets/images/property.jpg'
+import cryptoImg from '../assets/images/crypto.jpg'
+import netflixImg from '../assets/images/netflix.jpg'
+import twitchImg from '../assets/images/twitch.jpg'
 
 const Projects = () => {
     const projects = [
@@ -15,7 +15,7 @@ const Projects = () => {
 
     return (
         <div className='dark:bg-slate-800'>
-            <div id='projects' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-mono'>
+            <div id='projects' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
                 <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
                     Projects
                 </h1>
@@ -28,7 +28,7 @@ const Projects = () => {
                             href='https://github.com/ajbbla'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='cursor-pointer font-bold underline'
+                            className='cursor-pointer font-bold underline text-blue-600'
                         >
                             Github
                         </a>.

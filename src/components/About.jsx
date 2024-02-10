@@ -1,10 +1,10 @@
 import React from 'react'
-import Allen from '../assets/allen.jpg'
+import Allen from '../assets/images/allen.jpg'
 
 const About = () => {
     return (
         <div className='dark:bg-slate-800'>
-            <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-mono'>
+            <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
                 <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
                     About
                 </h1>

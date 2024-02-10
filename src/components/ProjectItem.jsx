@@ -4,7 +4,7 @@ const ProjectItem = ({ img, title, tools, demo, code }) => {
     return (
         <div className='relative flex items-center justify-center h-auto w-full shadow-lg shadow-gray-400 rounded-xl group hover:bg-white dark:shadow-slate-900 dark:hover:bg-slate-800'>
             <img src={img} alt={title} className='rounded-xl group-hover:opacity-10' />
-            <div className='hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'>
+            <div className='hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] font-chicago'>
                 <h3 className='text-2xl sm:text-lg lg:text-2xl font-bold text-gray-800 tracking-wider text-center dark:text-gray-300'>
                     {title}
                 </h3>
