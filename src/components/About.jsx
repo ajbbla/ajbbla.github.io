@@ -15,13 +15,13 @@ const About = () => {
                             className='lg:mt-8 mx-auto rounded-full h-80 w-80 shadow-lg shadow-gray-400 dark:shadow-slate-900'
                         />
                         <div>
-                            <div className='mb-8 text-2xl font-bold text-gray-800 dark:text-gray-300'>
+                            <div className='mb-8 text-2xl text-gray-800 dark:text-gray-300'>
                                 <p>
                                     Hi! I'm Allen, an ESL teacher turned software engineer.
                                 </p>
                             </div>
                             <div>
-                                <p className='text-gray-800 dark:text-gray-300'>
+                                <p className='font-geneva text-gray-800 dark:text-gray-300'>
                                     I have 6 years of experience teaching English to adult students from a
                                     diverse set of backgrounds and cultures, which has given me valuable skills
                                     in communication, problem-solving, and adaptability. I have always been

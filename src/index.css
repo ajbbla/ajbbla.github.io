@@ -20,3 +20,10 @@
     font-weight: normal;
     src: local('Chicago Plain'), url('./assets/fonts/Chicago.woff') format('woff');
 }
+
+@font-face {
+    font-family: 'Geneva';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Geneva'), url('./assets/fonts/Geneva.woff') format('woff');
+}

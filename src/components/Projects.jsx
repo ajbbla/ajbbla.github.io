@@ -28,7 +28,7 @@ const Projects = () => {
                             href='https://github.com/ajbbla'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='cursor-pointer font-bold underline text-blue-600'
+                            className='cursor-pointer underline text-blue-600'
                         >
                             Github
                         </a>.

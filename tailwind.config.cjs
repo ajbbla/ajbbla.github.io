@@ -15,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         'chicago': ['"Chicago Plain"', 'sans-serif'],
+        'geneva': ['"Geneva"', 'sans-serif'],
       },
     },
   },
