@@ -1,5 +1,4 @@
 import React from 'react'
-import Allen from '../assets/images/allen.jpg'
 import AboutLight from '../assets/images/about-light.png'
 import AboutDark from '../assets/images/about-dark.png'
 
