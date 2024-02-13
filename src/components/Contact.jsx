@@ -2,19 +2,18 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <div className='dark:bg-slate-800'>
+        <div className='dark:bg-black'>
             <div id='contact' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
+                <h1 className='py-8 mb-10 text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     Contact
                 </h1>
                 <div className='max-w-[1000px] w-full px-4'>
-                    <p className='text-left mb-6 text-gray-800 dark:text-gray-300'>
-                        I'm currently looking for work! Feel free to leave a message below or reach out on&nbsp;
-                        <a
+                    <p className='text-left mb-6 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
+                        I'm open to job opportunities. Feel free to leave a message below or reach out on <a
                             href='https://www.linkedin.com/in/allenjbb/'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='cursor-pointer underline text-blue-600'
+                            className='cursor-pointer underline hover:text-blue-600 dark:text-teal-500'
                         >
                             LinkedIn
                         </a>.

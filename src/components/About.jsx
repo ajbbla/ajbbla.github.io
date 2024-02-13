@@ -1,23 +1,32 @@
 import React from 'react'
 import Allen from '../assets/images/allen.jpg'
+import AboutLight from '../assets/images/about-light.png'
+import AboutDark from '../assets/images/about-dark.png'
 
 const About = () => {
     return (
-        <div className='dark:bg-slate-800'>
+        <div className='dark:bg-black'>
             <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
+                <h1 className='py-8 mb-10 text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     About
                 </h1>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
-                    <div className='max-w-[1000px] w-full grid gap-8 lg:grid-cols-2 px-4'>
-                        <img
-                            src={Allen}
-                            className='lg:mt-8 mx-auto rounded-full h-80 w-80 shadow-lg shadow-gray-400 dark:shadow-slate-900'
-                        />
+                    <div className='max-w-[1000px] w-full grid gap-2 lg:grid-cols-2 px-4'>
+                        <picture>
+                            <source
+                                srcset={AboutDark}
+                                media="(prefers-color-scheme: dark)"
+                                className='mx-auto h-80 w-80'
+                            />
+                            <img
+                                src={AboutLight}
+                                className='mx-auto h-80 w-80'
+                            />
+                        </picture>
                         <div>
-                            <div className='mb-8 text-2xl text-gray-800 dark:text-gray-300'>
+                            <div className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
                                 <p>
-                                    Hi! I'm Allen, an ESL teacher turned software engineer.
+                                    Hi, I'm Allen — an ESL teacher turned software engineer.
                                 </p>
                             </div>
                             <div>

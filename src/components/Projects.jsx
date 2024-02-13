@@ -14,21 +14,20 @@ const Projects = () => {
     ]
 
     return (
-        <div className='dark:bg-slate-800'>
+        <div className='dark:bg-black'>
             <div id='projects' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700'>
+                <h1 className='py-8 mb-10 text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     Projects
                 </h1>
                 <div className='max-w-[1000px] w-full px-4'>
-                    <p className='text-left pb-10 text-gray-800 dark:text-gray-300'>
+                    <p className='text-left pb-10 text-xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
                         My goal is to use my skills and experience to create innovative solutions
                         and make a positive impact in the field of technology. Check out
-                        additional projects on my&nbsp;
-                        <a
+                        additional projects on my <a
                             href='https://github.com/ajbbla'
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='cursor-pointer underline text-blue-600'
+                            className='cursor-pointer underline text-blue-600 dark:text-teal-500'
                         >
                             Github
                         </a>.

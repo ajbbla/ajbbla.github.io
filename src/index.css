@@ -6,12 +6,19 @@
     scroll-behavior: smooth;
 }
 
-.type::after {
-    content: '█';
-}
+/* .type::after {
+    content: '|';
+} */
 
 .hoverable:hover::after {
-    content: '█';
+    content: '|';
+    /* animation: cursor 1.1s infinite step-end; */
+}
+
+@keyframes cursor {
+    50% {
+      opacity: 0;
+    }
 }
 
 @font-face {
