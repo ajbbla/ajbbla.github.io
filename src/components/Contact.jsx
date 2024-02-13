@@ -1,23 +1,28 @@
 import React from 'react'
+import { TypeAnimation } from 'react-type-animation'
 
 const Contact = () => {
     return (
         <div className='dark:bg-black'>
             <div id='contact' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
-                <h1 className='py-8 mb-10 text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
+                <h1 className='py-8 mb-8 text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     Contact
                 </h1>
                 <div className='max-w-[1000px] w-full px-4'>
-                    <p className='text-left mb-6 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
-                        I'm open to job opportunities. Feel free to leave a message below or reach out on <a
-                            href='https://www.linkedin.com/in/allenjbb/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='cursor-pointer underline hover:text-blue-600 dark:text-teal-500'
-                        >
-                            LinkedIn
-                        </a>.
-                    </p>
+                    <h2 className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
+                        <TypeAnimation
+                            sequence={[
+                                3000,
+                                "Feel free to leave a message below —",
+                                1000,
+                                "Feel free to leave a message below — I'm open to opportunities or feedback.",
+                            ]}
+                            wrapper="h2"
+                            cursor={true}
+                            repeat={0}
+                            speed={50}
+                        />
+                    </h2>
                 </div>
                 <form
                     action='https://getform.io/f/3dbb660c-0c6b-449e-abfc-78b124fc4b9f'
@@ -80,6 +85,16 @@ const Contact = () => {
                         Send
                     </button>
                 </form>
+                <p className='text-center font-geneva pt-10 text-gray-800 dark:text-gray-300'>
+                    Or, connect with me on <a
+                        href='https://www.linkedin.com/in/allenjbb/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='cursor-pointer underline text-blue-600 dark:text-teal-500'
+                    >
+                        LinkedIn
+                    </a>.
+                </p>
             </div>
         </div>
     )
