@@ -18,7 +18,7 @@ const Home = () => {
                                 3000,
                                 '헬로 월드',
                             ]}
-                            wrapper="div"
+                            wrapper="h1"
                             cursor={true}
                             repeat={Infinity}
                             speed={10}
