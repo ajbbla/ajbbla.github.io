@@ -17,11 +17,11 @@ const Projects = () => {
     ]
 
     return (
-        <div className='dark:bg-black'>
-            <div id='projects' className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
-                <h1 className='py-8 mb-8 text-4xl text-center font-chicago text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
-                    Projects
-                </h1>
+        <article className='w-full h-full dark:bg-black'>
+            <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
+                <header className='py-8 mb-8 text-4xl text-center font-chicago text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
+                    <h1>Projects</h1>
+                </header>
                 <div className='max-w-[1000px] w-full px-4'>
                     <h2 className='text-left pb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
                         {/* A hidden copy of the text for screenreader accessibility */}
@@ -40,7 +40,7 @@ const Projects = () => {
                                     setIsTypingDone(true)
                                 }
                             ]}
-                            wrapper='h2'
+                            wrapper='span'
                             repeat={0}
                             speed={50}
                         />
@@ -51,23 +51,23 @@ const Projects = () => {
                                 href='https://github.com/ajbbla'
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='cursor-pointer underline text-blue-600 dark:text-teal-500'
+                                className='cursor-pointer underline text-teal-500'
+                                aria-label='Visit my GitHub profile for additional projects'
                             >
-                                Github
+                                GitHub
                             </a>.
                         </p>
                         <div className='grid sm:grid-cols-2 gap-10'>
                         {
-                            projects.map(([image, title, tools, demo, code]) => (
-                                <ProjectItem img={image} title={title} tools={tools} demo={demo} code={code} />
+                            projects.map(([image, title, tools, demo, code], index) => (
+                                <ProjectItem key={index} img={image} title={title} tools={tools} demo={demo} code={code} />
                             ))
                         }
                         </div>
                     </div>
                 </div>
-                
-            </div>
-        </div>
+            </section>
+        </article>
     )
 }
 

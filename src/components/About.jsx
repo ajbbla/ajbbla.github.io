@@ -8,13 +8,13 @@ const About = () => {
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
     return (
-        <div className='dark:bg-black'>
-            <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
-                <h1 className='py-8 mb-8 text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
-                    About
-                </h1>
+        <article className='min-h-screen max-h-full dark:bg-black'>
+            <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
+                <header className='py-8 mb-8 font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
+                    <h1>About</h1>
+                </header>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
-                    <div className='max-w-[1000px] w-full grid gap-2  px-4'>
+                    <div className='max-w-[1000px] w-full grid gap-2 px-4'>
                         <picture className='fade-in'>
                             <source
                                 srcset={AboutDark}
@@ -23,6 +23,7 @@ const About = () => {
                             />
                             <img
                                 src={AboutLight}
+                                alt='Information icon in a pixel art style'
                                 className='mx-auto h-80 w-80'
                             />
                         </picture>
@@ -46,7 +47,7 @@ const About = () => {
                                             setIsTypingDone(true)
                                         }
                                     ]}
-                                    wrapper='h2'
+                                    wrapper='span'
                                     repeat={0}
                                     speed={50}
                                 />
@@ -65,8 +66,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     )
 }
 

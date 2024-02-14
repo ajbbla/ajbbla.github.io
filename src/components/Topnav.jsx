@@ -37,7 +37,7 @@ const Topnav = () => {
                             href={Resume}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='m-4 py-2 px-4 text-sm text-white font-bold text-center rounded-md bg-gray-800 hover:bg-white hover:text-gray-800 border-2 border-gray-800 dark:text-black dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-black dark:hover:border-teal-500 dark:hover:text-teal-500'
+                            className='m-4 py-2 px-4 text-sm text-gray-800 font-bold text-center rounded-md bg-gray-200 hover:bg-white border-2 border-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-teal-500'
                         >
                             Resume
                         </a>
@@ -49,7 +49,7 @@ const Topnav = () => {
             <div className='md:hidden fixed z-[99] w-full h-[60px] border-b pt-4 bg-white dark:bg-black dark:border-gray-900'>
                 <div
                     onClick={handleNav}
-                    className='top-5 right-5 z-[99] fixed cursor-pointer md:hidden text-gray-800 dark:text-gray-300 dark:hover:text-teal-500'
+                    className='top-5 right-5 z-[99] fixed cursor-pointer md:hidden text-gray-800 dark:text-gray-300 hover:text-teal-500'
                 >
                     {!nav ? <FaBars /> : <FaTimes />}
                 </div>
@@ -64,7 +64,7 @@ const Topnav = () => {
                                         onClick={handleNav}  // Close the mobile menu on click
                                         className='m-8 px-[1px]'
                                     >
-                                        <span className='text-4xl text-gray-800 dark:text-gray-300 dark:hover:underline dark:hover:text-teal-500'>
+                                        <span className='text-4xl text-gray-800 dark:text-gray-300 hover:underline hover:text-teal-500'>
                                             {title}
                                         </span>
                                     </Link>
@@ -75,7 +75,7 @@ const Topnav = () => {
                                     href={Resume}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='py-2 px-4 text-2xl text-white font-bold text-center rounded-md bg-gray-800 border-2 border-gray-800 hover:bg-white hover:text-gray-800 dark:text-gray-700 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-black dark:hover:border-teal-500 dark:hover:text-teal-500'
+                                    className='py-2 px-4 text-2xl text-gray-800 font-bold text-center rounded-md bg-gray-200 border-2 border-gray-200 hover:bg-white dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-teal-500'
                                 >
                                     Resume
                                 </a>
