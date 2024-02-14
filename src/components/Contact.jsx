@@ -1,42 +1,52 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation'
+import usePageVisit from '../hooks/usePageVisit'
 
 const Contact = () => {
-    const [isTypingDone, setIsTypingDone] = useState(false)
+    const {isVisited, isTypingDone, setIsTypingDone } = usePageVisit('contactsPage')
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
     return (
         <article className='w-full h-full dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
-                <header className='py-8 mb-8 font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
+                <header className='py-8 mb-8 fade-in font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     <h1>Contact</h1>
                 </header>
                 <div className='max-w-[1000px] w-full px-4'>
                     <h2 className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
-                        {/* A hidden copy of the text for screenreader accessibility */}
-                        <span className='visually-hidden'>
-                            Feel free to leave a message below — I'm open to opportunities or feedback.
-                        </span>
-                        <TypeAnimation
-                            aria-hidden='true'  // Removes element from the a11y tree
-                            cursor={false}
-                            className={CURSOR_CLASS_NAME}
-                            sequence={[
-                                2000,
-                                "Feel free to leave a message below —",
-                                1000,
-                                "Feel free to leave a message below — I'm open to opportunities or feedback.",
-                                (el) => el.classList.remove(CURSOR_CLASS_NAME),
-                                () => {
-                                    setIsTypingDone(true)
-                                }
-                            ]}
-                            wrapper='span'
-                            repeat={0}
-                            speed={50}
-                        />
+                        {/* Display a typing animation on first visit or static content otherwise */}
+                        {!isVisited ? (
+                            <>
+                                {/* A hidden copy of the text for screenreader accessibility */}
+                                <span className='visually-hidden'>
+                                    Feel free to leave a message below — I'm open to opportunities or feedback.
+                                </span>
+                                <TypeAnimation
+                                    aria-hidden='true'  // Removes element from the a11y tree
+                                    cursor={false}
+                                    className={CURSOR_CLASS_NAME}
+                                    sequence={[
+                                        2000,
+                                        "Feel free to leave a message below —",
+                                        1000,
+                                        "Feel free to leave a message below — I'm open to opportunities or feedback.",
+                                        (el) => el.classList.remove(CURSOR_CLASS_NAME),
+                                        () => {
+                                            setIsTypingDone(true)
+                                        }
+                                    ]}
+                                    wrapper='span'
+                                    repeat={0}
+                                    speed={50}
+                                />
+                            </>
+                        ) : (
+                            <span className='fade-in'>
+                                Feel free to leave a message below — I'm open to opportunities or feedback.
+                            </span>
+                        )}
                     </h2>
-                    <div className={ isTypingDone ? 'fade-in' : 'opacity-0' }>
+                    <div className={ isVisited || isTypingDone ? 'fade-in' : 'opacity-0' }>
                         <p className='text-center font-geneva pb-8 text-gray-800 dark:text-gray-300'>
                             Or, connect with me on <a
                                 href='https://www.linkedin.com/in/allenjbb/'

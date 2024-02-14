@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AboutLight from '../assets/images/about-light.png'
 import AboutDark from '../assets/images/about-dark.png'
 import { TypeAnimation } from 'react-type-animation'
+import usePageVisit from '../hooks/usePageVisit'
 
 const About = () => {
-    const [isTypingDone, setIsTypingDone] = useState(false)
+    const { isVisited, isTypingDone, setIsTypingDone } = usePageVisit('aboutPage')
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
     return (
         <article className='min-h-screen max-h-full dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
-                <header className='py-8 mb-8 font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
+                <header className='py-8 mb-8 fade-in font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     <h1>About</h1>
                 </header>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
@@ -29,30 +30,39 @@ const About = () => {
                         </picture>
                         <div>
                             <h2 className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
-                                {/* A hidden copy of the text for screenreader accessibility */}
-                                <span className='visually-hidden'>
-                                    Hi, I'm Allen — an ESL instructor turned software engineer.
-                                </span>
-                                <TypeAnimation
-                                    aria-hidden='true'  // Removes element from the a11y tree
-                                    cursor={false} 
-                                    className={CURSOR_CLASS_NAME}
-                                    sequence={[
-                                        2000,
-                                        "Hi, I'm Allen —",
-                                        1000,
-                                        "Hi, I'm Allen — an ESL instructor turned software engineer.",
-                                        (el) => el.classList.remove(CURSOR_CLASS_NAME),
-                                        () => {
-                                            setIsTypingDone(true)
-                                        }
-                                    ]}
-                                    wrapper='span'
-                                    repeat={0}
-                                    speed={50}
-                                />
+                                {/* Display a typing animation on first visit or static content otherwise */}
+                                {!isVisited ? (
+                                    <>
+                                        {/* A hidden copy of the text for screenreader accessibility */}
+                                        <span className='visually-hidden'>
+                                            Hi, I'm Allen — an ESL instructor turned software engineer.
+                                        </span>
+                                        <TypeAnimation
+                                            aria-hidden='true'  // Removes element from the a11y tree
+                                            cursor={false} 
+                                            className={CURSOR_CLASS_NAME}
+                                            sequence={[
+                                                2000,
+                                                "Hi, I'm Allen —",
+                                                1000,
+                                                "Hi, I'm Allen — an ESL instructor turned software engineer.",
+                                                (el) => el.classList.remove(CURSOR_CLASS_NAME),
+                                                () => {
+                                                    setIsTypingDone(true)
+                                                }
+                                            ]}
+                                            wrapper='span'
+                                            repeat={0}
+                                            speed={50}
+                                        />
+                                    </>
+                                ) : (
+                                    <span className='fade-in'>
+                                        Hi, I'm Allen — an ESL instructor turned software engineer.
+                                    </span>
+                                )}
                             </h2>
-                            <div className={isTypingDone ? 'fade-in' : 'opacity-0'}>
+                            <div className={isVisited || isTypingDone ? 'fade-in' : 'opacity-0'}>
                                 <p className='font-geneva text-gray-800 dark:text-gray-300'>
                                     With nearly a decade of experience teaching English to adult learners from various 
                                     backgrounds and cultures, I've honed key skills in communication, adaptability, and 
