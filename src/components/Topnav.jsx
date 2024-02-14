@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Resume from '../assets/ajbb-resume.pdf'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Topnav = () => {
+    const location = useLocation()
     const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
     const links = [
-        { title: 'Home', path: '/' },
-        { title: 'About', path: '/about' },
-        { title: 'Projects', path: '/projects' },
-        { title: 'Contact', path: '/contact' },
+        { title: 'HOME', path: '/' },
+        { title: 'ABOUT', path: '/about' },
+        { title: 'PROJECTS', path: '/projects' },
+        { title: 'CONTACT', path: '/contact' },
     ]
 
     return (
@@ -24,7 +25,7 @@ const Topnav = () => {
                             <li key={title}>
                                 <Link
                                     to={path}
-                                    className='text-xl m-4 px-[1px] text-gray-800 dark:text-gray-300 hover:underline hover:text-teal-500'
+                                    className={`text-xl m-4 px-[1px] ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
                                 >
                                     {title}
                                 </Link>
@@ -37,9 +38,9 @@ const Topnav = () => {
                             href={Resume}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='m-4 py-2 px-4 text-sm text-gray-800 font-bold text-center rounded-md bg-gray-200 hover:bg-white border-2 border-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-teal-500'
+                            className='m-4 py-1 px-3 text-xl text-gray-800 text-center rounded-md bg-gray-200 hover:bg-teal-500 border-2 border-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-white'
                         >
-                            Resume
+                            RESUME
                         </a>
                     </li>
                 </ul>
@@ -64,20 +65,20 @@ const Topnav = () => {
                                         onClick={handleNav}  // Close the mobile menu on click
                                         className='m-8 px-[1px]'
                                     >
-                                        <span className='text-4xl text-gray-800 dark:text-gray-300 hover:underline hover:text-teal-500'>
+                                        <span className={`text-4xl ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}>
                                             {title}
                                         </span>
                                     </Link>
                                 ))
                             }
-                            <div className='m-8'>
+                            <div className='m-12'>
                                 <a
                                     href={Resume}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='py-2 px-4 text-2xl text-gray-800 font-bold text-center rounded-md bg-gray-200 border-2 border-gray-200 hover:bg-white dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-teal-500'
+                                    className='py-2 px-4 text-4xl text-gray-800 text-center rounded-xl bg-gray-200 border-2 border-gray-200 hover:bg-teal-500 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-white'
                                 >
-                                    Resume
+                                    RESUME
                                 </a>
                             </div>
                         </div>

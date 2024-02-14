@@ -12,7 +12,7 @@ const About = () => {
         <article className='min-h-screen max-h-full dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
                 <header className='py-8 mb-8 fade-in font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
-                    <h1>About</h1>
+                    <h1>ABOUT</h1>
                 </header>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
                     <div className='max-w-[1000px] w-full grid gap-2 px-4'>

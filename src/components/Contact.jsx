@@ -10,7 +10,7 @@ const Contact = () => {
         <article className='w-full h-full dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
                 <header className='py-8 mb-8 fade-in font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
-                    <h1>Contact</h1>
+                    <h1>CONTACT</h1>
                 </header>
                 <div className='max-w-[1000px] w-full px-4'>
                     <h2 className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
@@ -128,7 +128,7 @@ const Contact = () => {
                                 />
                             </div>
                             <button className='flex mr-0 ml-auto bg-gray-200 font-chicago text-sm text-gray-800 font-bold mt-4 py-2 px-4 rounded-lg border-2 border-gray-200 hover:bg-white dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-teal-500'>
-                                Send
+                                SEND
                             </button>
                         </form>
                     </div>

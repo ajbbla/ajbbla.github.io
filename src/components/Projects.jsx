@@ -22,7 +22,7 @@ const Projects = () => {
         <article className='w-full h-full dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
                 <header className='py-8 mb-8 fade-in text-4xl text-center font-chicago text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
-                    <h1>Projects</h1>
+                    <h1>PROJECTS</h1>
                 </header>
                 <div className='max-w-[1000px] w-full px-4'>
                     <h2 className='text-left pb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
