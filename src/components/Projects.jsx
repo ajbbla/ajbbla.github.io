@@ -24,8 +24,12 @@ const Projects = () => {
                 </h1>
                 <div className='max-w-[1000px] w-full px-4'>
                     <h2 className='text-left pb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
+                        {/* A hidden copy of the text for screenreader accessibility */}
+                        <span className='visually-hidden'>
+                            My goal is to use my skills and experience to create innovative solutions and make a positive impact in the field of technology.
+                        </span>
                         <TypeAnimation
-                            aria-hidden='true'
+                            aria-hidden='true'  // Removes element from the a11y tree
                             cursor={false}
                             className={CURSOR_CLASS_NAME}
                             sequence={[

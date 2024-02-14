@@ -28,8 +28,12 @@ const About = () => {
                         </picture>
                         <div>
                             <h2 className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
+                                {/* A hidden copy of the text for screenreader accessibility */}
+                                <span className='visually-hidden'>
+                                    Hi, I'm Allen — an ESL instructor turned software engineer.
+                                </span>
                                 <TypeAnimation
-                                    aria-hidden='true'
+                                    aria-hidden='true'  // Removes element from the a11y tree
                                     cursor={false} 
                                     className={CURSOR_CLASS_NAME}
                                     sequence={[

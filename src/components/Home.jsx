@@ -7,8 +7,12 @@ const Home = () => {
             <div className='w-full h-screen absolute top-0 left-0 bg-white dark:bg-black'>
                 <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center items-center'>
                     <h1 className='sm:text-5xl text-4xl text-gray-800 font-geneva font-bold dark:text-gray-300'>
+                        {/* A hidden copy of the text for screenreader accessibility */}
+                        <span className='visually-hidden'>
+                            Hello World
+                        </span>
                         <TypeAnimation
-                            aria-hidden='true'
+                            aria-hidden='true'  // Removes element from the a11y tree
                             sequence={[
                                 2000, // waits 2s
                                 'Hello World',
