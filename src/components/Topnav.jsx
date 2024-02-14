@@ -32,7 +32,7 @@ const Topnav = () => {
                         ))
                     }
                     <li>
-                        {/* this should open a pdf file in a new tab */}
+                        {/* Opens pdf file in a new tab */}
                         <a
                             href={Resume}
                             target='_blank'

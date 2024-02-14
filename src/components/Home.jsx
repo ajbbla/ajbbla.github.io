@@ -8,21 +8,21 @@ const Home = () => {
                 <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center items-center'>
                     <h1 className='sm:text-5xl text-4xl text-gray-800 font-geneva font-bold dark:text-gray-300'>
                         <TypeAnimation
+                            aria-hidden='true'
                             sequence={[
-                                3000, // waits 2s
+                                2000, // waits 2s
                                 'Hello World',
-                                3000,
+                                2000,
                                 '您好世界',
-                                3000,
+                                2000,
                                 'Chào thế giới',
-                                3000,
+                                2000,
                                 '헬로 월드',
                             ]}
-                            wrapper="h1"
+                            wrapper='h1'
                             cursor={true}
                             repeat={Infinity}
-                            speed={10}
-                            // className='type'
+                            speed={1}
                         />
                     </h1>
                 </div>

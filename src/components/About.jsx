@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AboutLight from '../assets/images/about-light.png'
 import AboutDark from '../assets/images/about-dark.png'
 import { TypeAnimation } from 'react-type-animation'
 
 const About = () => {
+    const [isTypingDone, setIsTypingDone] = useState(false)
+    const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
+
     return (
         <div className='dark:bg-black'>
             <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-chicago'>
@@ -12,7 +15,7 @@ const About = () => {
                 </h1>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
                     <div className='max-w-[1000px] w-full grid gap-2  px-4'>
-                        <picture>
+                        <picture className='fade-in'>
                             <source
                                 srcset={AboutDark}
                                 media="(prefers-color-scheme: dark)"
@@ -25,20 +28,26 @@ const About = () => {
                         </picture>
                         <div>
                             <h2 className='mb-8 text-2xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
-                                <TypeAnimation 
+                                <TypeAnimation
+                                    aria-hidden='true'
+                                    cursor={false} 
+                                    className={CURSOR_CLASS_NAME}
                                     sequence={[
-                                        3000,
+                                        2000,
                                         "Hi, I'm Allen —",
                                         1000,
                                         "Hi, I'm Allen — an ESL instructor turned software engineer.",
+                                        (el) => el.classList.remove(CURSOR_CLASS_NAME),
+                                        () => {
+                                            setIsTypingDone(true)
+                                        }
                                     ]}
-                                    wrapper="h2"
-                                    cursor={true}
+                                    wrapper='h2'
                                     repeat={0}
                                     speed={50}
                                 />
                             </h2>
-                            <div>
+                            <div className={isTypingDone ? 'fade-in' : 'opacity-0'}>
                                 <p className='font-geneva text-gray-800 dark:text-gray-300'>
                                     With nearly a decade of experience teaching English to adult learners from various 
                                     backgrounds and cultures, I've honed key skills in communication, adaptability, and 
