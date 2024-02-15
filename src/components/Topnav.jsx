@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Resume from '../assets/ajbb-resume.pdf'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { AiFillHome } from "react-icons/ai"
 
 const Topnav = () => {
     const location = useLocation()
@@ -19,9 +20,18 @@ const Topnav = () => {
         <>
             {/* Navbar */}
             <div className='hidden md:flex fixed z-[99] w-full h-[60px] border-b pt-4 bg-white dark:bg-black dark:border-gray-900 font-chicago'>
-                <ul className='flex lg:mr-0 ml-auto mr-auto'>
+                {/* <div className='fixed top-5 left-5 text-2xl cursor-pointer hover:text-teal-500'> */}
+                    <Link 
+                        to='/' 
+                        className={`fixed top-5 left-5 text-xl ${location.pathname === '/' ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
+                    >
+                        <AiFillHome />
+                    </Link>
+                {/* </div> */}
+                
+                <ul className='flex mr-auto ml-14'>
                     {
-                        links.map(({title, path}) => (
+                        links.slice(1).map(({title, path}) => (
                             <li key={title}>
                                 <Link
                                     to={path}
@@ -32,18 +42,16 @@ const Topnav = () => {
                             </li>
                         ))
                     }
-                    <li>
-                        {/* Opens pdf file in a new tab */}
-                        <a
+                </ul>
+                {/* Opens pdf file in a new tab */}
+                <a
                             href={Resume}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='m-4 py-1 px-3 text-xl text-gray-800 text-center rounded-md bg-gray-200 hover:bg-teal-500 border-2 border-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-white'
+                            className='fixed right-5 top-2.5 py-1 px-3 text-xl text-gray-800 text-center rounded-md bg-gray-200 hover:bg-teal-500 border-2 border-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 hover:border-teal-500 hover:text-white dark:hover:text-black'
                         >
                             RESUME
-                        </a>
-                    </li>
-                </ul>
+                </a>
             </div>
 
             {/* Mobile Menu */}
@@ -76,7 +84,7 @@ const Topnav = () => {
                                     href={Resume}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='py-2 px-4 text-4xl text-gray-800 text-center rounded-xl bg-gray-200 border-2 border-gray-200 hover:bg-teal-500 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:hover:bg-black hover:border-teal-500 hover:text-white'
+                                    className='py-2 px-4 text-4xl text-gray-800 text-center rounded-xl bg-gray-200 border-2 border-gray-200 hover:bg-teal-500 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 hover:border-teal-500 hover:text-white dark:hover:text-black'
                                 >
                                     RESUME
                                 </a>

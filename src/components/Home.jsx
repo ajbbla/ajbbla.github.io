@@ -2,6 +2,8 @@ import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
 
 const Home = () => {
+    const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
+
     return (
         <div className='w-full h-full absolute top-0 left-0 bg-white dark:bg-black'>
             <div className='max-w-[700px] m-auto h-full w-full flex flex-col justify-center items-center'>
@@ -12,6 +14,8 @@ const Home = () => {
                     </span>
                     <TypeAnimation
                         aria-hidden='true'  // Removes element from the a11y tree
+                        cursor={false}
+                        className={CURSOR_CLASS_NAME}
                         sequence={[
                             2000, // waits 2s
                             'Hello World',
@@ -23,7 +27,6 @@ const Home = () => {
                             '헬로 월드',
                         ]}
                         wrapper='h1'
-                        cursor={true}
                         repeat={Infinity}
                         speed={1}
                     />
