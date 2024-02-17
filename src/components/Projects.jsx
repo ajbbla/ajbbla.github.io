@@ -6,6 +6,8 @@ import netflixImg from '../assets/images/netflix.jpg'
 import twitchImg from '../assets/images/twitch.jpg'
 import { TypeAnimation } from 'react-type-animation'
 import usePageVisit from '../hooks/usePageVisit'
+import ProjectsLight from '../assets/images/projects-light.png'
+import ProjectsDark from '../assets/images/projects-dark.png'
 
 const Projects = () => {
     const { isVisited, isTypingDone, setIsTypingDone } = usePageVisit('projectsPage')
@@ -25,7 +27,17 @@ const Projects = () => {
                     <h1>PROJECTS</h1>
                 </header>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
-                    <div className='max-w-[1000px] w-full px-4'>
+                    <div className='max-w-[1000px] w-full grid gap-0 px-4'>
+                        <picture className='w-60 h-60 ml-auto mr-auto fade-in'>
+                            <source 
+                                srcset={ProjectsDark}
+                                media='(prefers-color-scheme: dark)'
+                            />
+                            <img 
+                                src={ProjectsLight}
+                                alt="An 8-bit rendering of code in a text editor" 
+                            />
+                        </picture>
                         <h2 className='pb-8 text-2xl text-center font-geneva font-bold text-gray-800 dark:text-gray-300'>
                             {/* Display a typing animation on first visit or static content otherwise */}
                             {!isVisited ? (
