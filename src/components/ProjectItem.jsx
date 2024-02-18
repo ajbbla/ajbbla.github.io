@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
 
-const ProjectItem = ({ img, title, tools, demo, code }) => {
+const ProjectItem = ({ img, title, tools, description, code }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     return (
