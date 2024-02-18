@@ -1,40 +1,80 @@
-import React from 'react'
-import Allen from '../assets/allen.jpg'
+import React, { useState, useEffect } from 'react'
+import { TypeAnimation } from 'react-type-animation'
+import usePageVisit from '../hooks/usePageVisit'
+import AboutLight from '../assets/images/about-light.png'
+import AboutDark from '../assets/images/about-dark.png'
 
 const About = () => {
+    const { isVisited, isTypingDone, setIsTypingDone } = usePageVisit('aboutPage')
+    const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
+
     return (
-        <div className='dark:bg-slate-800'>
-            <div id='about' className='max-w-[1040px] m-auto md:px-20 p-4 py-16 font-mono'>
-                <h1 className='py-8 mb-10 text-4xl font-bold text-center text-gray-800 border-b dark:text-gray-300 dark:border-slate-700 text-shadow-[0.75px_0.75px_1.25px] shadow-black dark:shadow-white'>
-                    About
-                </h1>
+        <article className='min-h-screen max-h-full dark:bg-black'>
+            <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
+                <header className='py-8 mb-8 fade-in font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
+                    <h1>ABOUT</h1>
+                </header>
                 <div className='flex flex-col justify-center items-center w-full h-full'>
-                    <div className='max-w-[1000px] w-full grid gap-8 lg:grid-cols-2 px-4'>
-                        <img
-                            src={Allen}
-                            className='lg:mt-8 mx-auto rounded-full h-80 w-80 shadow-lg shadow-gray-400 dark:shadow-slate-900'
-                        />
-                        <div>
-                            <div className='mb-8 text-2xl font-bold text-gray-800 dark:text-gray-300 text-shadow-[0.5px_0.5px_1px] shadow-black dark:shadow-white'>
-                                <p>
-                                    Hi! I'm Allen, an ESL teacher turned software engineer.
-                                </p>
-                            </div>
-                            <div>
-                                <p className='text-gray-800 dark:text-gray-300'>
-                                    I have 6 years of experience teaching English to adult students from a
-                                    diverse set of backgrounds and cultures, which has given me valuable skills
-                                    in communication, problem-solving, and adaptability. I have always been
-                                    passionate about both technology and language, and I believe that with my
-                                    background in teaching I bring a unique perspective on how to approach 
-                                    and solve problems in the field of software engineering.
-                                </p>
-                            </div>
+                    <div className='max-w-[1000px] w-full grid gap-0 px-4'>
+                        <picture className='w-60 h-60 ml-auto mr-auto fade-in'>
+                            <source 
+                                srcset={AboutDark}
+                                media='(prefers-color-scheme: dark)'
+                            />
+                            <img 
+                                src={AboutLight}
+                                alt="A lowercase 'i' inside an 8-bit chat bubble" 
+                            />
+                        </picture>
+                        <h2 className='mb-8 text-2xl text-center font-geneva font-bold text-gray-800 dark:text-gray-300'>
+                            {/* Display a typing animation on first visit or static content otherwise */}
+                            {!isVisited ? (
+                                <>
+                                    {/* A hidden copy of the text for screenreader accessibility */}
+                                    <span className='visually-hidden'>
+                                        Hi, I'm Allen — an ESL instructor turned software engineer.
+                                    </span>
+                                    <TypeAnimation
+                                        aria-hidden='true'  // Removes element from the a11y tree
+                                        cursor={false} 
+                                        className={CURSOR_CLASS_NAME}
+                                        sequence={[
+                                            2000,
+                                            "Hi, I'm Allen —",
+                                            1000,
+                                            "Hi, I'm Allen — an ESL instructor turned software engineer.",
+                                            (el) => el.classList.remove(CURSOR_CLASS_NAME),
+                                            () => {
+                                                setIsTypingDone(true)
+                                            }
+                                        ]}
+                                        wrapper='span'
+                                        repeat={0}
+                                        speed={50}
+                                    />
+                                </>
+                            ) : (
+                                <span className='fade-in'>
+                                    Hi, I'm Allen — an ESL instructor turned software engineer.
+                                </span>
+                            )}
+                        </h2>
+                        <div className={isVisited || isTypingDone ? 'fade-in' : 'opacity-0'}>
+                            <p className='font-geneva text-gray-800 dark:text-gray-300'>
+                                After nearly a decade of experience teaching English at home and abroad to adult 
+                                learners from various backgrounds and cultures, I've honed key skills in communication, 
+                                adaptability, and problem-solving. Transitioning from education to technology, I've 
+                                recently completed a Bachelor of Science in Computer Science, marking a significant 
+                                pivot in my career. My teaching background grants me a distinct, human-centric approach 
+                                to software development, and as I merge my passions for language and technology I'm 
+                                eager to engineer thoughtful and creative solutions to the complex problems of the tech 
+                                industry.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </article>
     )
 }
 

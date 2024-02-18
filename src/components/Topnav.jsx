@@ -1,86 +1,95 @@
 import React, { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import Resume from '../assets/ajbb-resume.pdf'
-import { FaBars, FaTimes, FaGithub, FaLinkedin, FaHome } from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
+import { AiFillHome } from "react-icons/ai"
 
 const Topnav = () => {
-    const [nav, setNav] = useState(false);
-    const handleNav = () => {
-        setNav(!nav);
-    }
+    const location = useLocation()
+    const [nav, setNav] = useState(false)
+    const handleNav = () => setNav(!nav)
+
     const links = [
-        ['Home', '#home'],
-        ['About', '#about'],
-        ['Projects', '#projects'],
-        ['Contact', '#contact'],
+        { title: 'HOME', path: '/' },
+        { title: 'ABOUT', path: '/about' },
+        { title: 'PROJECTS', path: '/projects' },
+        { title: 'CONTACT', path: '/contact' },
     ]
 
     return (
         <>
             {/* Navbar */}
-            <div className='hidden md:flex fixed z-[99] w-full h-[60px] border-b pt-4 bg-white text-gray-800 dark:bg-slate-800 dark:text-gray-300 dark:border-slate-700'>
-                <ul className='flex lg:mr-0 ml-auto mr-auto'>
+            <div className='hidden md:flex fixed z-[99] w-full h-[60px] border-b pt-4 bg-white dark:bg-black dark:border-gray-900 font-chicago'>
+                {/* <div className='fixed top-5 left-5 text-2xl cursor-pointer hover:text-teal-500'> */}
+                    <Link 
+                        to='/' 
+                        className={`fixed top-5 left-5 text-xl ${location.pathname === '/' ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
+                    >
+                        <AiFillHome />
+                    </Link>
+                {/* </div> */}
+                
+                <ul className='flex mr-auto ml-14'>
                     {
-                        links.map(([title, link]) => (
-                            <li>
-                                <a
-                                    href={link}
-                                    className='hoverable text-xl font-mono font-bold m-4 px-[1px] text-shadow-[0.5px_0.5px_1px] shadow-black dark:shadow-white'
+                        links.slice(1).map(({title, path}) => (
+                            <li key={title}>
+                                <Link
+                                    to={path}
+                                    className={`text-xl m-4 px-[1px] ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
                                 >
                                     {title}
-                                </a>
+                                </Link>
                             </li>
                         ))
                     }
-                    <li>
-                        {/* this should open a pdf file in a new tab */}
-                        <a
+                </ul>
+                {/* Opens pdf file in a new tab */}
+                <a
                             href={Resume}
                             target='_blank'
                             rel='noopener noreferrer'
-                            className='m-4 py-2 px-4 text-sm text-white font-mono font-bold text-center rounded-md bg-gray-800 hover:bg-white hover:text-gray-800 border-2 border-gray-800 drop-shadow-lg hover:drop-shadow-none dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'
+                            className='fixed right-5 top-2.5 py-1 px-3 text-xl text-gray-800 text-center rounded-md bg-gray-200 hover:bg-teal-500 border-2 border-gray-200 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 hover:border-teal-500 hover:text-white dark:hover:text-black'
                         >
-                            Resume
-                        </a>
-                    </li>
-                </ul>
+                            RESUME
+                </a>
             </div>
 
             {/* Mobile Menu */}
-            <div className='md:hidden fixed z-[99] w-full h-[60px] border-b pt-4 bg-white dark:bg-slate-800 dark:border-slate-700'>
+            <div className='md:hidden fixed z-[99] w-full h-[60px] border-b pt-4 bg-white dark:bg-black dark:border-gray-900'>
                 <div
                     onClick={handleNav}
-                    className='top-5 right-5 z-[99] fixed cursor-pointer md:hidden text-gray-800 dark:text-gray-300'
+                    className='top-5 right-5 z-[99] fixed cursor-pointer md:hidden text-gray-800 dark:text-gray-300 hover:text-teal-500'
                 >
                     {!nav ? <FaBars /> : <FaTimes />}
                 </div>
                 {
-                    nav ? (
-                        <div className='fixed w-full h-screen bg-white flex flex-col justify-center items-center z-20 dark:bg-slate-800'>
+                    nav && (
+                        <div className='fixed w-full h-screen bg-white flex flex-col justify-center items-center z-20 dark:bg-black font-chicago'>
                             {
-                                links.map(([title, link]) => (
-                                    <a
-                                        href={link}
-                                        onClick={handleNav}
+                                links.map(({ title, path }) => (
+                                    <Link
+                                        key={title}
+                                        to={path}
+                                        onClick={handleNav}  // Close the mobile menu on click
                                         className='m-8 px-[1px]'
                                     >
-                                        <span className='hoverable text-4xl text-gray-800 font-mono font-bold dark:text-gray-300 text-shadow-[0.75px_0.75px_1.25px] shadow-black dark:shadow-white'>
+                                        <span className={`text-4xl ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}>
                                             {title}
                                         </span>
-                                    </a>
-                                ))}
-                            <div className='m-8'>
+                                    </Link>
+                                ))
+                            }
+                            <div className='m-12'>
                                 <a
                                     href={Resume}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='py-2 px-4 text-2xl text-white font-mono font-bold text-center rounded-md bg-gray-800 border-2 border-gray-800 drop-shadow-lg shadow hover:drop-shadow-none hover:bg-white hover:text-gray-800 dark:text-slate-800 dark:bg-gray-300 dark:border-gray-300 dark:hover:bg-slate-800 dark:hover:text-gray-300'
+                                    className='py-2 px-4 text-4xl text-gray-800 text-center rounded-xl bg-gray-200 border-2 border-gray-200 hover:bg-teal-500 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 hover:border-teal-500 hover:text-white dark:hover:text-black'
                                 >
-                                    Resume
+                                    RESUME
                                 </a>
                             </div>
                         </div>
-                    ) : (
-                        ''
                     )
                 }
             </div>
