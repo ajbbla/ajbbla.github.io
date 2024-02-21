@@ -18,11 +18,11 @@ const Home = () => {
                         className={CURSOR_CLASS_NAME}
                         sequence={[
                             2000, // waits 2s
-                            'Hello World',
+                            'Hello, World',
                             2000,
                             '您好世界',
                             2000,
-                            'Chào Thế Giới',
+                            'Xin chào thế giới',
                             2000,
                             '헬로 월드',
                         ]}

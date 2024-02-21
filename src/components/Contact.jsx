@@ -60,7 +60,7 @@ const Contact = () => {
                             )}
                         </h2>
                         <div className={ isVisited || isTypingDone ? 'fade-in' : 'opacity-0' }>
-                            <p className='text-center font-geneva pb-4 text-gray-800 dark:text-gray-300'>
+                            <p className='text-center text-lg font-geneva pb-4 text-gray-800 dark:text-gray-300'>
                                 Or, connect with me on <a
                                     href='https://www.linkedin.com/in/allenjbb/'
                                     target='_blank'
