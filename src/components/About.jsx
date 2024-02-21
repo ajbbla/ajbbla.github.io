@@ -32,7 +32,7 @@ const About = () => {
                                 <>
                                     {/* A hidden copy of the text for screenreader accessibility */}
                                     <span className='visually-hidden'>
-                                        Hi, I'm Allen — an ESL instructor turned software engineer.
+                                        Welcome! I'm Allen — an ESL instructor turned software engineer.
                                     </span>
                                     <TypeAnimation
                                         aria-hidden='true'  // Removes element from the a11y tree
@@ -40,9 +40,11 @@ const About = () => {
                                         className={CURSOR_CLASS_NAME}
                                         sequence={[
                                             2000,
-                                            "Hi, I'm Allen —",
+                                            "Welcome!",
                                             1000,
-                                            "Hi, I'm Allen — an ESL instructor turned software engineer.",
+                                            "Welcome! I'm Allen —",
+                                            1000,
+                                            "Welcome! I'm Allen — an ESL instructor turned software engineer.",
                                             (el) => el.classList.remove(CURSOR_CLASS_NAME),
                                             () => {
                                                 setIsTypingDone(true)
@@ -55,21 +57,53 @@ const About = () => {
                                 </>
                             ) : (
                                 <span className='fade-in'>
-                                    Hi, I'm Allen — an ESL instructor turned software engineer.
+                                    Welcome! I'm Allen — an ESL instructor turned software engineer.
                                 </span>
                             )}
                         </h2>
                         <div className={isVisited || isTypingDone ? 'fade-in' : 'opacity-0'}>
-                            <p className='font-geneva text-gray-800 dark:text-gray-300'>
-                                After nearly a decade of experience teaching English at home and abroad to adult 
-                                learners from various backgrounds and cultures, I've honed key skills in communication, 
-                                adaptability, and problem-solving. Transitioning from education to technology, I've 
-                                recently completed a Bachelor of Science in Computer Science, marking a significant 
-                                pivot in my career. My teaching background grants me a distinct, human-centric approach 
-                                to software development, and as I merge my passions for language and technology I'm 
-                                eager to engineer thoughtful and creative solutions to the complex problems of the tech 
-                                industry.
-                            </p>
+                            <div className='text-lg'>
+                                <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
+                                    For nearly a decade, I've navigated language and culture as an ESL educator, 
+                                    forging connections with adult learners both at home and abroad. This 
+                                    journey has not only honed my ability to empathize with diverse perspectives 
+                                    but also instilled in me the profound commitment to adaptability and 
+                                    continuous growth that I witnessed firsthand in each of my students.
+                                </p>
+                                <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
+                                    Guided by that commitment to growth, I've decided to make the leap into the 
+                                    industry where learning truly never stops: software engineering. A newly 
+                                    minted Bachelor of Science in Computer Science has me rooted in the 
+                                    fundamentals of programming such as computer architecture, operating systems, 
+                                    networks, and of course data structures and algorithms. 
+                                </p>
+                                <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
+                                    My journey in programming encompasses an array of languages and frameworks, 
+                                    from experimenting with Unix system programming in C and investigating 
+                                    parallel programming in C++ to delving into the vibrant world of web design 
+                                    through JavaScript, React, and Node.js/Express. Recently, I've been 
+                                    immersing myself in Python and its spectrum of frameworks and libraries, 
+                                    exploring Django, Flask, and my current favorite, FastAPI, while delving 
+                                    into the realms of Natural Language Processing (NLP) and cloud application 
+                                    development.
+                                </p>
+                                <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
+                                    At the heart of my programming philosophy is a blend of curiosity and the 
+                                    insatiable need to solve problems. I thoroughly enjoy breaking down seemingly 
+                                    impossible tasks into small, manageable components, weaving them together 
+                                    into elegant solutions. With meticulous attention to detail and a penchant 
+                                    for experimentation, I thrive on pushing the boundaries of my abilities and 
+                                    working with others who feel the same.
+                                </p>
+                                <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
+                                    As I embark on this new chapter, I'm driven by a deep-seated desire to 
+                                    leverage my unique blend of skills and perspectives to confront the challenges 
+                                    that lie ahead. My background in ESL education has blessed me with invaluable 
+                                    communication skills, flexibility, and a heightened sense of empathy, enriching 
+                                    my approach to software engineering and positioning me to make meaningful 
+                                    contributions to the field.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

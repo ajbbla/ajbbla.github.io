@@ -20,14 +20,12 @@ const Topnav = () => {
         <>
             {/* Navbar */}
             <div className='hidden md:flex fixed z-[99] w-full h-[60px] border-b pt-4 bg-white dark:bg-black dark:border-gray-900 font-chicago'>
-                {/* <div className='fixed top-5 left-5 text-2xl cursor-pointer hover:text-teal-500'> */}
                     <Link 
                         to='/' 
                         className={`fixed top-5 left-5 text-xl ${location.pathname === '/' ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
                     >
                         <AiFillHome />
                     </Link>
-                {/* </div> */}
                 
                 <ul className='flex mr-auto ml-14'>
                     {
