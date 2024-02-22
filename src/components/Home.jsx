@@ -26,7 +26,7 @@ const Home = () => {
                             2000,
                             '헬로 월드',
                         ]}
-                        wrapper='h1'
+                        wrapper='span'
                         repeat={Infinity}
                         speed={1}
                     />

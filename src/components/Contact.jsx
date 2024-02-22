@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import usePageVisit from '../hooks/usePageVisit'
 import ContactLight from '../assets/images/contact-light.png'
 import ContactDark from '../assets/images/contact-dark.png'
 
 const Contact = () => {
-    const {isVisited, isTypingDone, setIsTypingDone } = usePageVisit('contactsPage')
+    const { visitCount } = usePageVisit('contactPage')
+    const [isTypingDone, setIsTypingDone] = useState(false)
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
     return (
@@ -18,7 +19,7 @@ const Contact = () => {
                     <div className='max-w-[1000px] w-full grid gap-0 px-4'>
                         <picture className='w-60 h-60 ml-auto mr-auto fade-in'>
                             <source 
-                                srcset={ContactDark}
+                                srcSet={ContactDark}
                                 media='(prefers-color-scheme: dark)'
                             />
                             <img 
@@ -28,7 +29,7 @@ const Contact = () => {
                         </picture>
                         <h2 className='mb-8 text-2xl text-center font-geneva font-bold text-gray-800 dark:text-gray-300'>
                             {/* Display a typing animation on first visit or static content otherwise */}
-                            {!isVisited ? (
+                            { visitCount === 1 ? (
                                 <>
                                     {/* A hidden copy of the text for screenreader accessibility */}
                                     <span className='visually-hidden'>
@@ -44,9 +45,7 @@ const Contact = () => {
                                             1000,
                                             "Feel free to leave a message below — I'm open to opportunities or feedback.",
                                             (el) => el.classList.remove(CURSOR_CLASS_NAME),
-                                            () => {
-                                                setIsTypingDone(true)
-                                            }
+                                            () => setIsTypingDone(true)
                                         ]}
                                         wrapper='span'
                                         repeat={0}
@@ -59,7 +58,7 @@ const Contact = () => {
                                 </span>
                             )}
                         </h2>
-                        <div className={ isVisited || isTypingDone ? 'fade-in' : 'opacity-0' }>
+                        <div className={ visitCount > 1 || isTypingDone ? 'fade-in' : 'opacity-0' }>
                             <p className='text-center text-lg font-geneva pb-4 text-gray-800 dark:text-gray-300'>
                                 Or, connect with me on <a
                                     href='https://www.linkedin.com/in/allenjbb/'

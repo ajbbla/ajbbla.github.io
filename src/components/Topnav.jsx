@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useVisitedPages } from '../contexts/VisitedPagesContext'
 import Resume from '../assets/ajbb-resume.pdf'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { AiFillHome } from "react-icons/ai"
 
 const Topnav = () => {
     const location = useLocation()
+    const { markPageAsVisited } = useVisitedPages()
     const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
@@ -33,6 +35,9 @@ const Topnav = () => {
                             <li key={title}>
                                 <Link
                                     to={path}
+                                    onClick={() => {
+                                        markPageAsVisited(title.toLowerCase() + 'Page')
+                                    }}
                                     className={`text-xl m-4 px-[1px] ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
                                 >
                                     {title}

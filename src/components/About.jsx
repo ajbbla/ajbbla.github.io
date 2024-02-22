@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import usePageVisit from '../hooks/usePageVisit'
 import AboutLight from '../assets/images/about-light.png'
 import AboutDark from '../assets/images/about-dark.png'
 
 const About = () => {
-    const { isVisited, isTypingDone, setIsTypingDone } = usePageVisit('aboutPage')
+    const { visitCount } = usePageVisit('aboutPage')
+    const [isTypingDone, setIsTypingDone] = useState(false)
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
     return (
@@ -18,7 +19,7 @@ const About = () => {
                     <div className='max-w-[1000px] w-full grid gap-0 px-4'>
                         <picture className='w-60 h-60 ml-auto mr-auto fade-in'>
                             <source 
-                                srcset={AboutDark}
+                                srcSet={AboutDark}
                                 media='(prefers-color-scheme: dark)'
                             />
                             <img 
@@ -28,7 +29,7 @@ const About = () => {
                         </picture>
                         <h2 className='mb-8 text-2xl text-center font-geneva font-bold text-gray-800 dark:text-gray-300'>
                             {/* Display a typing animation on first visit or static content otherwise */}
-                            {!isVisited ? (
+                            {visitCount === 1 ? (
                                 <>
                                     {/* A hidden copy of the text for screenreader accessibility */}
                                     <span className='visually-hidden'>
@@ -61,7 +62,7 @@ const About = () => {
                                 </span>
                             )}
                         </h2>
-                        <div className={isVisited || isTypingDone ? 'fade-in' : 'opacity-0'}>
+                        <div className={visitCount > 1 || isTypingDone ? 'fade-in' : 'opacity-0'}>
                             <div className='text-lg'>
                                 <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
                                     For nearly a decade, I've navigated language and culture as an ESL educator, 
