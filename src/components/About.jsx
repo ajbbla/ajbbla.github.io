@@ -10,7 +10,7 @@ const About = () => {
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
     return (
-        <article className='min-h-screen max-h-full dark:bg-black'>
+        <article className='min-h-screen max-h-full bg-white dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
                 <header className='py-8 mb-8 fade-in font-chicago text-4xl text-center text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     <h1>ABOUT</h1>

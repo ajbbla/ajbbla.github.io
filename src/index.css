@@ -8,11 +8,13 @@
 
 :root {
     --bg-color: white; /* default bg color for light mode */
+    background-color: white;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: black; /* bg color for dark mode */
+        background-color: black;
     }
 }
 
