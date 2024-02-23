@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import ProjectItem from './ProjectItem'
 import { TypeAnimation } from 'react-type-animation'
 import usePageVisit from '../hooks/usePageVisit'
@@ -7,11 +7,12 @@ import ProjectsDark from '../assets/images/projects-dark.png'
 import projectsData from '../data/projectsData'
 
 const Projects = () => {
-    const { isVisited, isTypingDone, setIsTypingDone } = usePageVisit('projectsPage')
+    const { visitCount } = usePageVisit('projectsPage')
+    const [isTypingDone, setIsTypingDone] = useState(false)
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
-    
+
     return (
-        <article className='w-full h-full dark:bg-black'>
+        <article className='w-full h-full bg-white dark:bg-black'>
             <section className='max-w-[1040px] m-auto md:px-20 p-4 py-16'>
                 <header className='py-8 mb-8 fade-in text-4xl text-center font-chicago text-gray-800 border-b dark:text-gray-300 dark:border-gray-900'>
                     <h1>PROJECTS</h1>
@@ -20,7 +21,7 @@ const Projects = () => {
                     <div className='max-w-[1000px] w-full grid gap-0 px-4'>
                         <picture className='w-60 h-60 ml-auto mr-auto fade-in'>
                             <source 
-                                srcset={ProjectsDark}
+                                srcSet={ProjectsDark}
                                 media='(prefers-color-scheme: dark)'
                             />
                             <img 
@@ -30,7 +31,7 @@ const Projects = () => {
                         </picture>
                         <h2 className='pb-8 text-2xl text-center font-geneva font-bold text-gray-800 dark:text-gray-300'>
                             {/* Display a typing animation on first visit or static content otherwise */}
-                            {!isVisited ? (
+                            {visitCount === 1 ? (
                                 <>
                                     {/* A hidden copy of the text for screenreader accessibility */}
                                     <span className='visually-hidden'>
@@ -59,7 +60,7 @@ const Projects = () => {
                                 </span> 
                             )}
                         </h2>
-                        <div className={ isVisited || isTypingDone ? 'fade-in' : 'opacity-0'}>
+                        <div className={ visitCount > 1 || isTypingDone ? 'fade-in' : 'opacity-0'}>
                             <p className='text-center text-lg font-geneva pb-8 text-gray-800 dark:text-gray-300' >
                                 Check out additional projects on <a
                                     href='https://github.com/ajbbla'

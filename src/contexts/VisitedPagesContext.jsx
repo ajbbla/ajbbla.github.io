@@ -11,8 +11,11 @@ export const VisitedPagesProvider = ({ children }) => {
     })
 
     const markPageAsVisited = (pageName) => {
-        // Create a new object with existing visited pages and current visited page
-        const newVisitedPages = { ...visitedPages, [pageName]: true }
+        // Create a new object with existing visited pages and increment current page
+        const newVisitedPages = { 
+            ...visitedPages, 
+            [pageName]: (visitedPages[pageName] || 0) + 1 
+        }
         setVisitedPages(newVisitedPages)  // update state
         sessionStorage.setItem('visitedPages', JSON.stringify(newVisitedPages))  // update session storage
     }

@@ -144,7 +144,7 @@ const projectsData = [
                     Challenges and Learning Outcomes
                 </h2>
                 <p className='font-geneva text-gray-800 dark:text-gray-300'>
-                    Managing zombie processes and ensuring the shell did not leave any orphaned processes was essential for both the success of the project and the survival of my development environment. 
+                    Managing zombie processes and ensuring the shell didn't leave any orphaned processes was essential for both the success of the project and the survival of my development environment. 
                     This challenge led to a deeper understanding of process life cycles and improved my skills in resource management 
                     and debugging in a Unix/Linux environment.
                 </p>    

@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useVisitedPages } from '../contexts/VisitedPagesContext'
 import Resume from '../assets/ajbb-resume.pdf'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { AiFillHome } from "react-icons/ai"
 
 const Topnav = () => {
     const location = useLocation()
+    const { markPageAsVisited } = useVisitedPages()
     const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
@@ -33,6 +35,9 @@ const Topnav = () => {
                             <li key={title}>
                                 <Link
                                     to={path}
+                                    onClick={() => {
+                                        markPageAsVisited(title.toLowerCase() + 'Page')
+                                    }}
                                     className={`text-xl m-4 px-[1px] ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
                                 >
                                     {title}
@@ -68,10 +73,19 @@ const Topnav = () => {
                                     <Link
                                         key={title}
                                         to={path}
-                                        onClick={handleNav}  // Close the mobile menu on click
+                                        onClick={(e) => {
+                                            // Prevent default behavior if link is to current page
+                                            if (location.pathname === path) {
+                                                e.preventDefault()
+                                            } else {
+                                                // Close the mobile menu on click and mark destination as visited
+                                                handleNav()
+                                                markPageAsVisited(title.toLowerCase() + 'Page')
+                                            }
+                                        }}  
                                         className='m-8 px-[1px]'
                                     >
-                                        <span className={`text-4xl ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}>
+                                        <span className={`text-2xl ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 cursor-default' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}>
                                             {title}
                                         </span>
                                     </Link>
@@ -82,7 +96,7 @@ const Topnav = () => {
                                     href={Resume}
                                     target='_blank'
                                     rel='noopener noreferrer'
-                                    className='py-2 px-4 text-4xl text-gray-800 text-center rounded-xl bg-gray-200 border-2 border-gray-200 hover:bg-teal-500 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 hover:border-teal-500 hover:text-white dark:hover:text-black'
+                                    className='py-2 px-4 text-2xl text-gray-800 text-center rounded-lg bg-gray-200 border-2 border-gray-200 hover:bg-teal-500 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 hover:border-teal-500 hover:text-white dark:hover:text-black'
                                 >
                                     RESUME
                                 </a>
