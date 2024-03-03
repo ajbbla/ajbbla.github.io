@@ -65,11 +65,12 @@ const About = () => {
                         <div className={visitCount > 1 || isTypingDone ? 'fade-in' : 'opacity-0'}>
                             <div className='text-lg'>
                                 <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
-                                    For nearly a decade, I've navigated language and culture as an ESL educator, 
-                                    forging connections with adult learners both at home and abroad. This 
-                                    journey has not only honed my ability to empathize with diverse perspectives 
-                                    but also instilled in me the profound commitment to adaptability and 
-                                    continuous growth that I witnessed firsthand in each of my students.
+                                    For nearly a decade, I've navigated language and culture as an English as a 
+                                    Second Language (ESL) educator, forging connections with adult learners both 
+                                    at home and abroad. This journey has not only honed my ability to empathize 
+                                    with diverse perspectives but also instilled in me the profound commitment to 
+                                    adaptability and continuous growth that I witnessed firsthand in each of my 
+                                    students.
                                 </p>
                                 <p className='pb-4 font-geneva text-gray-800 dark:text-gray-300'>
                                     Guided by that commitment to growth, I've decided to make the leap into the 
