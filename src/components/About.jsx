@@ -5,7 +5,7 @@ import AboutLight from '../assets/images/about-light.png'
 import AboutDark from '../assets/images/about-dark.png'
 
 const About = () => {
-    const { visitCount } = usePageVisit('aboutPage')
+    const { visitCount } = usePageVisit('about')
     const [isTypingDone, setIsTypingDone] = useState(false)
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
