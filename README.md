@@ -12,14 +12,12 @@ This portfolio is built using React and leverages modern web development practic
 
 ## Featured Projects
 
-Below are some of the projects featured in my portfolio. Each project entry includes a brief overview, key technologies used, and links to the live demo and source code.
+Below are some of the projects featured in my portfolio. Each project entry includes a brief overview, key technologies used, and links to its Github repo and live demo if available.
 
 - **Firebase Fulfillment**: A cloud backend for a big box order fulfillment system. [[Demo](#) | [Code](https://github.com/allenjbb/firebase-fulfillment)]
 - **Resume Anonymizer**: A CLI tool to anonymize personal data within docx resume files. [[Code](https://github.com/allenjbb/resume-anonymizer)]
 - **打字吧**: A game for Mandarin learners to improve typing skills. [[Demo](#) | [Code](https://github.com/allenjbb/daziba)]
 - **smallsh**: A shell program that implements a subset of features of well-known shells, such as Bash. [[Code](https://github.com/allenjbb/smallsh)]
-
-_For more details, please visit the [Projects](https://allenjbb.github.io/projects) section of my portfolio._
 
 ## Technologies Used
 
