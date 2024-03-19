@@ -35,9 +35,6 @@ const Topnav = () => {
                             <li key={title}>
                                 <Link
                                     to={path}
-                                    onClick={() => {
-                                        markPageAsVisited(title.toLowerCase() + 'Page')
-                                    }}
                                     className={`text-xl m-4 px-[1px] ${location.pathname === path ? 'text-gray-300 dark:text-gray-800 pointer-events-none' : 'text-gray-800 dark:text-gray-300 hover:text-teal-500'}`}
                                 >
                                     {title}
@@ -80,7 +77,6 @@ const Topnav = () => {
                                             } else {
                                                 // Close the mobile menu on click and mark destination as visited
                                                 handleNav()
-                                                markPageAsVisited(title.toLowerCase() + 'Page')
                                             }
                                         }}  
                                         className='m-8 px-[1px]'
