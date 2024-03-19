@@ -5,7 +5,7 @@ import ContactLight from '../assets/images/contact-light.png'
 import ContactDark from '../assets/images/contact-dark.png'
 
 const Contact = () => {
-    const { visitCount } = usePageVisit('contact')
+    const { visitCount } = usePageVisit('contactPage')
     const [isTypingDone, setIsTypingDone] = useState(false)
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
