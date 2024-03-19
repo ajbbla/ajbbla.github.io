@@ -1,0 +1,17 @@
+<!-- Workaround for client-side routing -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Redirecting...</title>
+        <script>
+            // Parses the current URL to get the path
+            let path = window.location.pathname;
+            // Redirects to the homepage and appends the path
+            window.location.href = "/?" + path;
+        </script>
+    </head>
+    <body>
+        If you are not redirected automatically, follow the <a href="/">link to the homepage</a>.
+    </body>
+</html>

@@ -78,8 +78,10 @@ const projectsData = [
                 <h2 className='pt-8 pb-4 text-xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
                     Key Features and Functionalities
                 </h2>
-                <p className='font-geneva text-gray-800 dark:text-gray-300'>
-                    Key features of <strong>smallsh</strong> include:
+                <span className='font-geneva text-gray-800 dark:text-gray-300'>
+                    <p>
+                        Key features of <strong>smallsh</strong> include:
+                    </p>
                     <ul className='list-disc pl-4'>
                         <li className='py-2'>
                             <span>
@@ -137,8 +139,10 @@ const projectsData = [
                             /> 
                         </li>
                     </ul>
-                    The implementation of these features required a deep understanding of process control and signal handling in Unix/Linux environments.
-                </p>
+                    <p>
+                        The implementation of these features required a deep understanding of process control and signal handling in Unix/Linux environments.
+                    </p>
+                </span>
 
                 <h2 className='pt-8 pb-4 text-xl font-geneva font-bold text-gray-800 dark:text-gray-300'>
                     Challenges and Learning Outcomes

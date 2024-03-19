@@ -7,7 +7,7 @@ import ProjectsDark from '../assets/images/projects-dark.png'
 import projectsData from '../data/projectsData'
 
 const Projects = () => {
-    const { visitCount } = usePageVisit('projectsPage')
+    const { visitCount } = usePageVisit('projects')
     const [isTypingDone, setIsTypingDone] = useState(false)
     const CURSOR_CLASS_NAME = 'custom-type-animation-cursor'
 
